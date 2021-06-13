@@ -5,9 +5,7 @@
         <group>
             <file>file:/home/stanquela/Projects/todo-app/app/Http/Controllers/TasksController.php</file>
             <file>file:/home/stanquela/Projects/todo-app/routes/web.php</file>
-            <file>file:/home/stanquela/Projects/todo-app/app/Models/User.php</file>
             <file>file:/home/stanquela/Projects/todo-app/app/Models/Task.php</file>
-            <file>file:/home/stanquela/Projects/todo-app/.env</file>
         </group>
     </open-files>
 </project-private>
