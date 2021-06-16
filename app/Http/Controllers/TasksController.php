@@ -60,6 +60,9 @@ class TasksController extends Controller
                 'description' => 'required'
             ]);
             $task->description = $request->description;
+            
+            $task->check = $request->has('check') ? 1 : 0;
+
             $task->save();
             return redirect('/dashboard');
         }
