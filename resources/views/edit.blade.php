@@ -14,7 +14,9 @@
                 <div class="form-group">
                     <textarea name="description" class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white">{{$task->description }}</textarea>	
                     <!--<input type="hidden" name="check" value= "0">-->
-                    <input type="checkbox" name="check" value= "{{$task->check}}">	
+                    
+                    Zavrseno
+                    <input type="checkbox" name="check" value= "{{$task->check}}">
 
                     @if ($errors->has('description'))
                         <span class="text-danger">{{ $errors->first('description') }}</span>

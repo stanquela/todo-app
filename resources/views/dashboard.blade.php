@@ -43,6 +43,27 @@
                         </td>
                     </tr>
                 @endforeach
+                <tr class="border-b">
+                    <th class="text-left p-3 px-5">All tasks</th>
+                    <th class="text-left p-3 px-5">Done</th>
+                    <th class="text-left p-3 px-5">Not done</th>
+                    <th></th>
+                </tr>
+                
+                <tr class="border-b">
+                    <th class="text-left p-3 px-5">{{DB::table('tasks')->where('user_id', Auth::user()->id)->count()}}</th>
+                    <th class="text-left p-3 px-5">{{DB::table('tasks')->where('user_id', Auth::user()->id)->where('check',1)->count()}}</th>
+                    <th class="text-left p-3 px-5">{{DB::table('tasks')->where('user_id', Auth::user()->id)->where('check',0)->count()}}</th>
+                    <th></th>
+                </tr>
+                <!--counts for all tasks in the entire DB, need only auth users
+                <tr class="border-b">
+                    <th class="text-left p-3 px-5">{{DB::table('tasks')->count()}}</th>
+                    <th class="text-left p-3 px-5">{{DB::table('tasks')->where('check',1)->count()}}</th>
+                    <th class="text-left p-3 px-5">{{DB::table('tasks')->where('check',0)->count()}}</th>
+                    <th></th>
+                </tr>
+                -->
                 </tbody>
             </table>
             
