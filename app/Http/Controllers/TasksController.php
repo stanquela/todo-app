@@ -33,7 +33,7 @@ class TasksController extends Controller
         return redirect('/dashboard');
     }
     
-    //edit task function
+       //edit task function
     public function edit(Task $task)
     {
         if (auth()->user()->id == $task->user_id)
@@ -66,5 +66,15 @@ class TasksController extends Controller
             $task->save();
             return redirect('/dashboard');
         }
+    }
+    
+
+    //delete task function
+    public function delete(Task $task)
+    {
+        $task = Task::find($task);
+        $task->each->delete();
+
+        return redirect('/dashboard');
     }
 }

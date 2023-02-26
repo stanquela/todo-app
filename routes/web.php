@@ -23,9 +23,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(/*'/dashboard',*/ functio
     /*changes*/
     Route::get('/dashboard',[TasksController::class,'index'])->name('dashboard');
     
-    Route::get('/task',[TasksController::class,'add']);
-    Route::post('/task',[TasksController::class,'create']);
+    Route::get('/add-task',[TasksController::class,'add'])->name('addTask');
+    Route::post('/create-task',[TasksController::class,'create'])->name('createTask');
     
-    Route::get('/task/{task}',[TasksController::class,'edit']);
-    Route::post('/task/{task}',[TasksController::class,'update']);
+    Route::get('/edit-task/{task}',[TasksController::class,'edit'])->name('editTask');
+    Route::post('/update-task/{task}',[TasksController::class,'update'])->name('updateTask');
+    Route::delete('/delete-task/{task}', [TasksController::class, 'delete'])->name('deleteTask');
+
 });/*->name('dashboard');*/
